@@ -1,0 +1,3 @@
+// submission.h
+
+bool sample();

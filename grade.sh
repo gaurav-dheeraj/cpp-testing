@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-EXPECTED_FILES="add.h add.cpp addCmdLine.cpp sumStdin.cpp"
+EXPECTED_FILES="submission.cpp"
 
 # Set the make target for the compilation phase
 

@@ -1,26 +1,16 @@
 CXX = g++ 
 # CXX = clang++
 
-CXXFLAGS = -Wall -Wno-uninitialized -std=c++11
+CXXFLAGS = -Wall -Wno-uninitialized -std=c++11 $(EXTRA_CXXFLAGS)
 
-BINARIES=addCmdLine biggerTest sumStdin sumTest
+BINARIES=submissionTest
 
 all: ${BINARIES}
 
 tests: ${BINARIES}
-	./sumTest
-	./biggerTest
+	./submissionTest
 
-sumTest: add.o sumTest.o tddFuncs.o
-	$(CXX) $(CXXFLAGS)  $^ -o $@ $(LDFLAGS)
-
-biggerTest: add.o biggerTest.o tddFuncs.o
-	$(CXX) $(CXXFLAGS)  $^ -o $@ $(LDFLAGS)
-
-addCmdLine: add.o addCmdLine.o
-	$(CXX) $(CXXFLAGS)  $^ -o $@ $(LDFLAGS)
-
-sumStdin: add.o sumStdin.o
+submissionTest: submission.o submissionTest.o tddFuncs.o
 	$(CXX) $(CXXFLAGS)  $^ -o $@ $(LDFLAGS)
 
 clean:
